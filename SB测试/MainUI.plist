@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>vcName</key>
+		<string>friendsStroyboard</string>
+		<key>title</key>
+		<string>好消息</string>
+		<key>icon</key>
+		<string>tab_recent_nor</string>
+		<key>badgeNumber</key>
+		<string>99</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>friendsStroyboard</string>
+		<key>title</key>
+		<string>联系人</string>
+		<key>icon</key>
+		<string>tab_buddy_nor</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>PersonStrory</string>
+		<key>title</key>
+		<string>动态</string>
+		<key>icon</key>
+		<string>tab_qworld_nor</string>
+		<key>badgeNumber</key>
+		<string>30</string>
+	</dict>
+	<dict>
+		<key>vcName</key>
+		<string>PersonStrory</string>
+		<key>title</key>
+		<string>设置</string>
+		<key>icon</key>
+		<string>tab_me_nor</string>
+	</dict>
+</array>
+</plist>

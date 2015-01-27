@@ -17,8 +17,36 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window  = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    //b不要在主方法中写碎代码
+    [self setUI];
+    [self.window makeKeyAndVisible];
     return YES;
 }
+
+-(void)setUI{
+    
+    UITabBarController *uiTabBar = [[UITabBarController alloc] init];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"MainUI" withExtension:@"plist"];
+    NSArray *arr = [NSArray arrayWithContentsOfURL:url];
+    
+    for (NSDictionary *dic in arr) {
+        
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:dic[@"vcName"] bundle:nil];
+        UIViewController *uiVC = sb.instantiateInitialViewController;
+        uiVC.title = dic[@"title"];
+        uiVC.tabBarItem.image = [UIImage imageNamed:dic[@"icon"]];
+        uiVC.tabBarItem.badgeValue = dic[@"badgeNumber"];
+        
+        [uiTabBar addChildViewController:uiVC];
+    }
+    
+    self.window.rootViewController = uiTabBar;
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

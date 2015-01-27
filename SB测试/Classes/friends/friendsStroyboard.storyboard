@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AuN-cd-91a">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+    </dependencies>
+    <scenes>
+        <!--消息-->
+        <scene sceneID="Ftr-Mu-fr7">
+            <objects>
+                <tableViewController id="dnh-0B-X09" customClass="MessageViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CUa-CP-4qA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="KQq-1D-qsr">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KQq-1D-qsr" id="s1z-Ua-7R1">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dnh-0B-X09" id="x39-Ja-Ekn"/>
+                            <outlet property="delegate" destination="dnh-0B-X09" id="Rf3-dY-zJh"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="消息" id="cMP-c6-eme">
+                        <barButtonItem key="rightBarButtonItem" image="menu_icon_bulb" id="7rn-CZ-wgf">
+                            <connections>
+                                <action selector="clickBtn:" destination="dnh-0B-X09" id="BDp-ee-a0j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="esX-ZE-NhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597" y="-293"/>
+        </scene>
+        <!--消息-->
+        <scene sceneID="rCL-PY-fZ8">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="AuN-cd-91a" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="消息" image="tab_recent_nor" id="fyR-Lx-GSA"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9gL-Hm-iWY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="dnh-0B-X09" kind="relationship" relationship="rootViewController" id="UHj-sA-vXZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gQd-BD-5we" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-129" y="-293"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menu_icon_bulb" width="30" height="30"/>
+        <image name="tab_recent_nor" width="28" height="28"/>
+    </resources>
+</document>
